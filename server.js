@@ -15,8 +15,8 @@ app.use(express.urlencoded({extended: true}));
 
 // Endpoints and Plays
 app.get('/app', (req, res) => { res.status(200).send("200 OK"); });
-app.get('/app/rps', (req, res) => { res.status(200).send(rps(null)); });
-app.get('/app/rpsls', (req, res) => { res.status(200).send(rpsls(null)); });
+app.get('/app/rps', (req, res) => { res.status(200).send(rps()); });
+app.get('/app/rpsls', (req, res) => { res.status(200).send(rpsls()); });
 app.get('/app/rps/play', (req, res) => { res.status(200).send(rps(req.query.shot)); });
 app.get('/app/rps/play', (req, res) => { res.status(200).send(rps(req.body.shot)); });
 app.get('/app/rps/play/:shot', (req, res) => { res.status(200).send(rps(req.params.shot)); });
