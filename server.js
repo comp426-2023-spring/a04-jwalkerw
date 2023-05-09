@@ -22,6 +22,7 @@ app.get('/app/rps/play/:shot/', (req, res) => { res.status(200).send(rps(req.par
 app.get('/app/rpsls/play/', (req, res) => { res.status(200).send(rpsls(req.query.shot)); });
 app.get('/app/rpsls/play/', (req, res) => { res.status(200).send(rpsls(req.body.shot)); });
 app.get('/app/rpsls/play/:shot/', (req, res) => { res.status(200).send(rpsls(req.params.shot)); });
+app.get('*', (req, res) => { res.status(400).send("404 NOT FOUND"); });
 
 //Listen
 app.listen(portVar, () => { console.log("We're listening on port " + portVar); });
