@@ -2,7 +2,7 @@
 
 import minimist from 'minimist';
 import express from 'express';
-import {rps, rpsls} from './lib/rpsls.js';
+import { rps, rpsls } from './lib/rpsls.js';
 
 // Create options and express
 const options = minimist(process.argv.slice(2));
@@ -11,9 +11,10 @@ const app = express();
 const portVar = options.port ?? 5000;
 // Use app
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 // Endpoints and Plays
-app.get('/app/', (req, res) => {	res.status(200).send("200 OK"); });
+app.get('/app/', (req, res) => { res.status(200).send("200 OK"); });
 app.get('/app/rps/', (req, res) => { res.status(200).send(rps(null)); });
 app.get('/app/rpsls/', (req, res) => { res.status(200).send(rpsls(null)); });
 app.get('/app/rps/play/', (req, res) => { res.status(200).send(rps(req.query.shot)); });
