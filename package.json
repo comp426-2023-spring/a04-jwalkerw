@@ -2,9 +2,10 @@
   "name": "a04-jwalkerw",
   "version": "1.0.0",
   "description": "This assignment will help you stand up a web API using Express and the module that you produced for a03.",
-  "main": "index.js",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node server.js --port=5555"
   },
   "repository": {
     "type": "git",
